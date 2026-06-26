@@ -888,12 +888,6 @@ if run_btn:
 
 
 # B. Render results -- always visible once data exists, survives reruns
-# Show Gemini debug info if it failed to init
-if not GEMINI_AVAILABLE:
-    err = globals().get("_GEMINI_ERR", "Unknown error")
-    st.sidebar.error(f"Gemini unavailable: {err}")
-    st.sidebar.code(f"GEMINI_API_KEY present: {bool(os.getenv('GEMINI_API_KEY'))}")
-
 if "marketing_data" not in st.session_state:
     st.stop()
 
